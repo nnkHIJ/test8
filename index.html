@@ -286,7 +286,10 @@ map.on('click', (e) => {
         });
 
         // 例: ポイントクリック時にメモボックスを表示し、位置を保存する
-        map.on('click', (e) => {
+        map.on('click', handleMapClick);
+        map.on('touchend', handleMapClick);
+
+        function handleMapClick(e) {
             const features = draw.getAll().features.filter(feature => feature.geometry.type === 'Point');
             if (features.length > 0) {
                 const nearestFeature = features.reduce((nearest, feature) => {
@@ -300,7 +303,7 @@ map.on('click', (e) => {
                 if (nearestFeature.feature) {
                     noteLngLat = nearestFeature.feature.geometry.coordinates;
                     updateNoteDisplayPosition(noteLngLat);
-                    const note = nearestFeature.feature.properties.note || '     ';
+                    const note = nearestFeature.feature.properties.note || ' ';
                     document.getElementById('note-content').innerText = note;
                     document.getElementById('note-display').style.display = 'block';
                 } else {
@@ -309,7 +312,7 @@ map.on('click', (e) => {
             } else {
                 document.getElementById('note-display').style.display = 'none';
             }
-        });
+        }
 
     </script>
 </body>
