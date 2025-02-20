@@ -13,10 +13,10 @@
     "population-source": {
       "type": "vector",
       "tiles": [
-        "pmtiles://https://hfu.github.io/worldpop-h3/pop.pmtiles/{z}/{x}/{y}"
+        "pmtiles://https://data.source.coop/smartmaps/h3ys-worldpop/tls.pmtiles/{z}/{x}/{y}"
       ],
       "minzoom": 4,
-      "maxzoom": 14
+      "maxzoom": 12
     },
     "PublicTransport-source": {
       "type": "vector",
@@ -107,19 +107,6 @@
             ["<=", ["get", "2020"],     448], "#ff5555",
             ["<=", ["get", "2020"],     896], "#ff3939",
             ["<=", ["get", "2020"],    1792], "#ff1c1c",
-            "#ff0000"
-          ],
-          14, [
-            "case",
-            ["<=", ["get", "2020"],       1], "#ffffff",
-            ["<=", ["get", "2020"],       2], "#ffe3e3",
-            ["<=", ["get", "2020"],       4], "#ffc6c6",
-            ["<=", ["get", "2020"],       8], "#ffaaaa",
-            ["<=", ["get", "2020"],      16], "#ff8e8e",
-            ["<=", ["get", "2020"],      32], "#ff7171",
-            ["<=", ["get", "2020"],      64], "#ff5555",
-            ["<=", ["get", "2020"],     128], "#ff3939",
-            ["<=", ["get", "2020"],     256], "#ff1c1c",
             "#ff0000"
           ]
         ],
